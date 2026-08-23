@@ -105,6 +105,15 @@ class VoiceService {
       this.synth.cancel(); // Cancel any ongoing speech
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = this.currentLanguage;
+      
+      const voices = this.synth.getVoices();
+      if (voices && voices.length > 0) {
+        const matchingVoice = voices.find(v => v.lang === this.currentLanguage || v.lang.startsWith(this.currentLanguage.split('-')[0]));
+        if (matchingVoice) {
+          utterance.voice = matchingVoice;
+        }
+      }
+
       utterance.rate = 1.0;
       utterance.pitch = 1.0;
       this.synth.speak(utterance);

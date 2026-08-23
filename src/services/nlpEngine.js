@@ -62,13 +62,77 @@ const NUMBER_MAP = {
 };
 
 const CATEGORY_SYNONYMS = {
-  'Produce': ['produce', 'fruit', 'fruits', 'vegetable', 'vegetables', 'veggie', 'veggies', 'apple', 'apples', 'banana', 'bananas', 'strawberry', 'strawberries', 'corn', 'avocado', 'avocados', 'berry', 'berries', 'pumpkin', 'pumpkins'],
-  'Dairy & Eggs': ['dairy', 'milk', 'egg', 'eggs', 'yogurt', 'cheese', 'butter', 'cream'],
-  'Bakery': ['bakery', 'bread', 'breads', 'loaf', 'loaves', 'bagel', 'muffin', 'cake'],
-  'Beverages': ['beverages', 'beverage', 'drink', 'drinks', 'water', 'juice', 'soda', 'tea', 'coffee'],
-  'Snacks': ['snacks', 'snack', 'chocolate', 'chips', 'candy', 'cookies', 'nuts'],
-  'Pantry': ['pantry', 'oil', 'flour', 'sugar', 'rice', 'pasta'],
+  'Produce': ['produce', 'fruit', 'fruits', 'vegetable', 'vegetables', 'veggie', 'veggies', 'apple', 'apples', 'banana', 'bananas', 'strawberry', 'strawberries', 'corn', 'avocado', 'avocados', 'berry', 'berries', 'pumpkin', 'pumpkins', 'frutas', 'verduras', 'légumes', 'obst', 'gemüse', 'फल', 'सब्जियां'],
+  'Dairy & Eggs': ['dairy', 'milk', 'egg', 'eggs', 'yogurt', 'cheese', 'butter', 'cream', 'lácteos', 'huevos', 'laiterie', 'milchprodukte', 'डेयरी'],
+  'Bakery': ['bakery', 'bread', 'breads', 'loaf', 'loaves', 'bagel', 'muffin', 'cake', 'panadería', 'boulangerie', 'bäckerei', 'बेकरी'],
+  'Beverages': ['beverages', 'beverage', 'drink', 'drinks', 'water', 'juice', 'soda', 'tea', 'coffee', 'bebidas', 'boissons', 'getränke', 'पेय पदार्थ'],
+  'Snacks': ['snacks', 'snack', 'chocolate', 'chips', 'candy', 'cookies', 'nuts', 'bocadillos', 'goûter', 'स्नैक्स'],
+  'Pantry': ['pantry', 'oil', 'flour', 'sugar', 'rice', 'pasta', 'aceite', 'huile', 'öl', 'तेल'],
   'Personal Care': ['personal care', 'toothpaste', 'soap', 'shampoo']
+};
+
+export const MULTILINGUAL_PRODUCT_MAP = {
+  // Spanish
+  'leche': 'Whole Milk',
+  'leches': 'Whole Milk',
+  'manzana': 'Organic Honeycrisp Apples',
+  'manzanas': 'Organic Honeycrisp Apples',
+  'plátano': 'Organic Bananas',
+  'platano': 'Organic Bananas',
+  'plátanos': 'Organic Bananas',
+  'pan': 'Artisan Sourdough Bread',
+  'fresa': 'Fresh Strawberries',
+  'fresas': 'Fresh Strawberries',
+  'aguacate': 'Organic Hass Avocado',
+  'aguacates': 'Organic Hass Avocado',
+  'yogur': 'Greek Yogurt Honey',
+  'agua': 'Sparkling Mineral Water',
+  'aceite': 'Extra Virgin Olive Oil',
+  'maíz': 'Sweet Corn',
+  'maiz': 'Sweet Corn',
+  'pasta': 'Artisan Sourdough Bread',
+  'chocolat': 'Dark Chocolate Bar',
+
+  // French
+  'lait': 'Whole Milk',
+  'laits': 'Whole Milk',
+  'pomme': 'Organic Honeycrisp Apples',
+  'pommes': 'Organic Honeycrisp Apples',
+  'banane': 'Organic Bananas',
+  'bananes': 'Organic Bananas',
+  'pain': 'Artisan Sourdough Bread',
+  'fraise': 'Fresh Strawberries',
+  'fraises': 'Fresh Strawberries',
+  'avocat': 'Organic Hass Avocado',
+  'avocats': 'Organic Hass Avocado',
+  'yaourt': 'Greek Yogurt Honey',
+  'eau': 'Sparkling Mineral Water',
+  'huile': 'Extra Virgin Olive Oil',
+
+  // German
+  'milch': 'Whole Milk',
+  'apfel': 'Organic Honeycrisp Apples',
+  'äpfel': 'Organic Honeycrisp Apples',
+  'brot': 'Artisan Sourdough Bread',
+  'erdbeere': 'Fresh Strawberries',
+  'erdbeeren': 'Fresh Strawberries',
+  'wasser': 'Sparkling Mineral Water',
+  'joghurt': 'Greek Yogurt Honey',
+  'öl': 'Extra Virgin Olive Oil',
+
+  // Hindi
+  'दूध': 'Whole Milk',
+  'सेब': 'Organic Honeycrisp Apples',
+  'केला': 'Organic Bananas',
+  'केले': 'Organic Bananas',
+  'ब्रेड': 'Artisan Sourdough Bread',
+  'स्ट्रॉबेरी': 'Fresh Strawberries',
+  'एवोकाडो': 'Organic Hass Avocado',
+  'पानी': 'Sparkling Mineral Water',
+  'दही': 'Greek Yogurt Honey',
+  'तेल': 'Extra Virgin Olive Oil',
+  'मक्का': 'Sweet Corn',
+  'चॉकलेट': 'Dark Chocolate Bar'
 };
 
 /**
@@ -350,7 +414,8 @@ export function capitalizeItemName(str) {
  */
 export function findBestCatalogMatch(catalog, queryName, maxPrice = null) {
   if (!catalog || catalog.length === 0 || !queryName) return null;
-  const q = queryName.toLowerCase().trim();
+  const rawQ = queryName.toLowerCase().trim();
+  const q = MULTILINGUAL_PRODUCT_MAP[rawQ] ? MULTILINGUAL_PRODUCT_MAP[rawQ].toLowerCase() : rawQ;
 
   const pool = (maxPrice !== null && maxPrice > 0)
     ? catalog.filter(item => item.price <= maxPrice)
