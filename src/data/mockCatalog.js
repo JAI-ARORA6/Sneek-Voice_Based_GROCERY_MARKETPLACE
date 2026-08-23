@@ -1,0 +1,261 @@
+// Mock Grocery Product Catalog & Database with Semantic Tags
+
+export const MOCK_CATALOG = [
+  {
+    id: 'prod-1',
+    name: 'Whole Milk',
+    category: 'Dairy & Eggs',
+    price: 3.49,
+    brand: 'Horizon Organic',
+    organic: true,
+    unit: 'gallon',
+    substitutes: ['Almond Milk', 'Oat Milk', 'Soy Milk', 'Coconut Milk'],
+    seasonal: 'All Year',
+    inStock: true,
+    popular: true,
+    tags: ['dairy', 'milk', 'eggs', 'drink', 'beverage', 'horizon', 'whole milk']
+  },
+  {
+    id: 'prod-2',
+    name: 'Almond Milk',
+    category: 'Dairy & Eggs',
+    price: 3.99,
+    brand: 'Silk',
+    organic: true,
+    unit: 'carton',
+    substitutes: ['Oat Milk', 'Whole Milk'],
+    seasonal: 'All Year',
+    inStock: true,
+    tags: ['dairy', 'milk', 'plant based', 'vegan', 'almond milk', 'silk']
+  },
+  {
+    id: 'prod-3',
+    name: 'Oat Milk',
+    category: 'Dairy & Eggs',
+    price: 4.29,
+    brand: 'Oatly',
+    organic: false,
+    unit: 'carton',
+    substitutes: ['Almond Milk', 'Soy Milk'],
+    seasonal: 'All Year',
+    inStock: true,
+    tags: ['dairy', 'milk', 'plant based', 'vegan', 'oat milk', 'oatly']
+  },
+  {
+    id: 'prod-4',
+    name: 'Organic Honeycrisp Apples',
+    category: 'Produce',
+    price: 4.99,
+    brand: 'Fresh Orchard',
+    organic: true,
+    unit: 'bag (3 lb)',
+    substitutes: ['Gala Apples', 'Granny Smith Apples', 'Pears'],
+    seasonal: 'Autumn',
+    inStock: true,
+    popular: true,
+    tags: ['produce', 'fruit', 'fruits', 'apple', 'apples', 'fresh', 'honeycrisp']
+  },
+  {
+    id: 'prod-5',
+    name: 'Fresh Bananas',
+    category: 'Produce',
+    price: 1.29,
+    brand: 'Dole',
+    organic: false,
+    unit: 'bunch',
+    substitutes: ['Plantains', 'Apples'],
+    seasonal: 'All Year',
+    inStock: true,
+    popular: true,
+    tags: ['produce', 'fruit', 'fruits', 'banana', 'bananas', 'fresh', 'dole']
+  },
+  {
+    id: 'prod-6',
+    name: 'Whole Wheat Bread',
+    category: 'Bakery',
+    price: 2.99,
+    brand: 'Dave\'s Killer Bread',
+    organic: true,
+    unit: 'loaf',
+    substitutes: ['Gluten Free Bread', 'Multigrain Sourdough'],
+    seasonal: 'All Year',
+    inStock: true,
+    popular: true,
+    tags: ['bakery', 'bread', 'breads', 'wheat bread', 'whole wheat', 'sandwich']
+  },
+  {
+    id: 'prod-7',
+    name: 'White Sandwich Bread',
+    category: 'Bakery',
+    price: 1.99,
+    brand: 'Wonder',
+    organic: false,
+    unit: 'loaf',
+    substitutes: ['Whole Wheat Bread', 'Sourdough Bread'],
+    seasonal: 'All Year',
+    inStock: true,
+    tags: ['bakery', 'bread', 'breads', 'white bread', 'sandwich', 'wonder']
+  },
+  {
+    id: 'prod-8',
+    name: 'Organic Strawberries',
+    category: 'Produce',
+    price: 3.99,
+    brand: 'Driscoll\'s',
+    organic: true,
+    unit: 'pack (16 oz)',
+    substitutes: ['Blueberries', 'Raspberries'],
+    seasonal: 'Summer',
+    inStock: true,
+    popular: true,
+    tags: ['produce', 'fruit', 'fruits', 'berry', 'berries', 'strawberry', 'strawberries']
+  },
+  {
+    id: 'prod-9',
+    name: 'Avocados',
+    category: 'Produce',
+    price: 2.49,
+    brand: 'Hass',
+    organic: true,
+    unit: 'bag of 4',
+    substitutes: ['Guacamole', 'Hummus'],
+    seasonal: 'Spring',
+    inStock: true,
+    tags: ['produce', 'fruit', 'fruits', 'avocado', 'avocados', 'hass', 'fresh']
+  },
+  {
+    id: 'prod-10',
+    name: 'Greek Yogurt (Plain)',
+    category: 'Dairy & Eggs',
+    price: 4.49,
+    brand: 'Chobani',
+    organic: true,
+    unit: '32 oz tub',
+    substitutes: ['Coconut Yogurt', 'Almond Milk Yogurt'],
+    seasonal: 'All Year',
+    inStock: true,
+    tags: ['dairy', 'yogurt', 'eggs', 'chobani', 'greek yogurt']
+  },
+  {
+    id: 'prod-11',
+    name: 'Sparkling Mineral Water',
+    category: 'Beverages',
+    price: 5.99,
+    brand: 'Pellegrino',
+    organic: false,
+    unit: 'pack of 6',
+    substitutes: ['LaCroix', 'Flavored Seltzer'],
+    seasonal: 'Summer',
+    inStock: true,
+    tags: ['beverages', 'beverage', 'drink', 'drinks', 'water', 'sparkling']
+  },
+  {
+    id: 'prod-12',
+    name: 'Whitening Toothpaste',
+    category: 'Personal Care',
+    price: 3.79,
+    brand: 'Crest',
+    organic: false,
+    unit: 'tube',
+    substitutes: ['Tom\'s Natural Toothpaste', 'Sensodyne'],
+    seasonal: 'All Year',
+    inStock: true,
+    tags: ['personal care', 'toothpaste', 'crest', 'whitening', 'teeth']
+  },
+  {
+    id: 'prod-13',
+    name: 'Dark Chocolate Bars (70%)',
+    category: 'Snacks',
+    price: 2.99,
+    brand: 'Lindt',
+    organic: true,
+    unit: 'bar',
+    substitutes: ['Fair Trade Cocoa Chips', 'Almond Dark Chocolate'],
+    seasonal: 'Winter',
+    inStock: true,
+    tags: ['snacks', 'snack', 'chocolate', 'dark chocolate', 'candy', 'lindt']
+  },
+  {
+    id: 'prod-14',
+    name: 'Organic Extra Virgin Olive Oil',
+    category: 'Pantry',
+    price: 8.99,
+    brand: 'California Olive Ranch',
+    organic: true,
+    unit: '16.9 oz',
+    substitutes: ['Avocado Oil', 'Coconut Oil'],
+    seasonal: 'All Year',
+    inStock: true,
+    tags: ['pantry', 'oil', 'olive oil', 'cooking oil']
+  },
+  {
+    id: 'prod-15',
+    name: 'Fresh Sweet Corn',
+    category: 'Produce',
+    price: 2.99,
+    brand: 'Local Farm',
+    organic: true,
+    unit: '4 ears',
+    substitutes: ['Frozen Sweet Corn', 'Zucchini'],
+    seasonal: 'Summer',
+    inStock: true,
+    tags: ['produce', 'vegetable', 'vegetables', 'veggie', 'veggies', 'corn', 'sweet corn']
+  },
+  {
+    id: 'prod-16',
+    name: 'Organic Pumpkins',
+    category: 'Produce',
+    price: 5.49,
+    brand: 'Heritage Farm',
+    organic: true,
+    unit: 'each',
+    substitutes: ['Butternut Squash', 'Sweet Potatoes'],
+    seasonal: 'Autumn',
+    inStock: true,
+    tags: ['produce', 'vegetable', 'vegetables', 'pumpkin', 'pumpkins']
+  }
+];
+
+export const CATEGORIES = [
+  'All',
+  'Dairy & Eggs',
+  'Produce',
+  'Bakery',
+  'Beverages',
+  'Pantry',
+  'Snacks',
+  'Personal Care'
+];
+
+export const INITIAL_SHOPPING_LIST = [
+  {
+    id: 'item-1',
+    name: 'Organic Honeycrisp Apples',
+    category: 'Produce',
+    quantity: 2,
+    unit: 'bag (3 lb)',
+    price: 4.99,
+    completed: false,
+    addedVia: 'voice'
+  },
+  {
+    id: 'item-2',
+    name: 'Whole Milk',
+    category: 'Dairy & Eggs',
+    quantity: 1,
+    unit: 'gallon',
+    price: 3.49,
+    completed: false,
+    addedVia: 'voice'
+  },
+  {
+    id: 'item-3',
+    name: 'Whole Wheat Bread',
+    category: 'Bakery',
+    quantity: 1,
+    unit: 'loaf',
+    price: 2.99,
+    completed: true,
+    addedVia: 'suggestion'
+  }
+];
