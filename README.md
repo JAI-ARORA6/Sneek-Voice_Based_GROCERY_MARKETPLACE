@@ -75,21 +75,36 @@ Open `http://localhost:3000` in your web browser.
 
 ---
 
-## 🛠️ Build & Deployment
+## 🛠️ Build & Cloud Deployment
 
-### Production Build
-To create an optimized production build:
+### 🔑 HTTPS Requirement for Voice Recognition
+> **Note**: Modern browsers (Chrome, Safari, Edge) require **HTTPS** for persistent microphone access and Web Speech API voice recognition. All cloud deployment options below provide automatic SSL/HTTPS.
+
+### 1. Firebase Hosting (Google Cloud Platform)
+Firebase Hosting provides ultra-fast global CDN delivery backed by Google Cloud Infrastructure.
+
 ```bash
-npm run build
-```
-The output files will be generated in the `dist/` directory.
+# 1. Login to Firebase / GCP
+npx firebase-tools login
 
-### Zero-Config Hosting Deployment
-This project is ready to deploy on any static hosting platform:
-- **Vercel**: `npx vercel`
-- **Netlify**: `npx netlify deploy --prod --dir=dist`
-- **Firebase Hosting**: `firebase deploy`
-- **GitHub Pages**: Deploy contents of the `dist/` directory.
+# 2. Initialize project (select Hosting)
+npx firebase-tools init hosting
+
+# 3. Build & Deploy
+npm run deploy:firebase
+```
+
+### 2. Vercel Cloud Deployment
+```bash
+# Deploy instantly to Vercel global edge network
+npm run deploy:vercel
+```
+
+### 3. Netlify Cloud Deployment
+```bash
+# Deploy to Netlify CDN
+npm run deploy:netlify
+```
 
 ---
 
