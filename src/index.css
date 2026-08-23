@@ -319,13 +319,69 @@ h1, h2, h3, h4, .sneek-title {
   justify-content: center;
 }
 
-/* Mobile Responsive Breakpoints */
+/* Mobile Responsive Breakpoints & Alignment Fixes */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column !important;
+  }
+  main > div {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 80px; /* Leave room for floating bottom bar */
+  }
+
+  /* Header Navbar Mobile Layout */
+  header {
+    padding: 12px 16px !important;
+    border-radius: 18px !important;
+    gap: 10px !important;
+    justify-content: space-between !important;
+  }
+
+  /* Hide center text nav links on mobile to prevent clutter */
+  header > div:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Compact brand title */
+  header h1 {
+    font-size: 1.25rem !important;
+  }
+  header span {
+    font-size: 0.65rem !important;
+  }
+
+  /* Hero Section Grid Stacking */
+  section > div {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    text-align: center;
+  }
+
+  section p {
+    margin: 0 auto 24px !important;
+  }
+
+  section div[style*="display: flex"][style*="gap: 16px"] {
+    justify-content: center;
+  }
+
+  /* Scale down yellow backdrop disc so it doesn't overflow mobile screen */
+  section div[style*="width: 320px"] {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Modal Mobile Bottom Sheet */
   .modal-overlay {
     align-items: flex-end;
     padding: 0;
   }
-  
+
   .glass-panel {
     border-radius: 20px;
   }
@@ -336,13 +392,29 @@ h1, h2, h3, h4, .sneek-title {
     border-bottom: none !important;
   }
 
-  header {
-    padding: 14px 18px !important;
-    border-radius: 16px !important;
-  }
-
   .btn {
-    min-height: 48px;
+    min-height: 44px;
   }
 }
+
+@media (max-width: 580px) {
+  #product-section {
+    padding: 24px 16px !important;
+    border-radius: 20px !important;
+  }
+
+  #product-section > div:nth-child(2) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  /* Mobile Marquee Wrap */
+  .sneek-marquee {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
 
