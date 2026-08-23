@@ -9,7 +9,8 @@ export default function HeroBanner({
   interimTranscript,
   onRunSampleCommand,
   hasSpeechSupport,
-  onOpenSearch
+  onOpenSearch,
+  currentLang = 'en-US'
 }) {
   return (
     <section style={{ marginBottom: '40px' }}>
@@ -107,6 +108,7 @@ export default function HeroBanner({
               interimTranscript={interimTranscript}
               onRunSampleCommand={onRunSampleCommand}
               hasSpeechSupport={hasSpeechSupport}
+              currentLang={currentLang}
             />
           </div>
         </div>

@@ -8,15 +8,51 @@ export default function VoiceMicController({
   transcript,
   interimTranscript,
   onRunSampleCommand,
-  hasSpeechSupport
+  hasSpeechSupport,
+  currentLang = 'en-US'
 }) {
-  const exampleCommands = [
-    'find me fruits under 3 doloor',
-    'add 5 quantity of strawberries',
-    'remove 5 milk from it',
-    'Find toothpaste under $5',
-    'Add 2 bottles of whole milk'
-  ];
+  const getExampleCommands = () => {
+    switch (currentLang) {
+      case 'hi-IN':
+        return [
+          'केला ऐड करो',
+          '2 दूध जोड़ें',
+          'सेब खोजें',
+          'कार्ट खोलो',
+          '1 ब्रेड डाल दो'
+        ];
+      case 'es-ES':
+        return [
+          'Añadir 2 leches',
+          'Buscar manzanas',
+          'Ver carrito',
+          'Quitar 1 agua',
+          'Comprar todo'
+        ];
+      case 'fr-FR':
+        return [
+          'Ajouter 2 pommes',
+          'Chercher du lait',
+          'Ouvrir le panier',
+          'Acheter'
+        ];
+      case 'de-DE':
+        return [
+          'Füge 2 Äpfel hinzu',
+          'Milch suchen',
+          'Warenkorb öffnen'
+        ];
+      default:
+        return [
+          'Add 2 bottles of milk',
+          'Find fruits under $5',
+          'Open cart & checkout',
+          'Add 5 strawberries'
+        ];
+    }
+  };
+
+  const exampleCommands = getExampleCommands();
 
   return (
     <div

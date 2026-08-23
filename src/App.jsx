@@ -340,6 +340,7 @@ export default function App() {
         onRunSampleCommand={(sampleCmd) => executeCommand(sampleCmd)}
         hasSpeechSupport={voiceService.hasRecognition}
         onOpenSearch={() => setSearchModal({ isOpen: true, query: '', maxPrice: 5, organicOnly: false })}
+        currentLang={currentLang}
       />
 
       {/* Sneek Marketplace Product Catalog Grid */}
