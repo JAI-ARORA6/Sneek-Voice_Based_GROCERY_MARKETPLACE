@@ -419,6 +419,8 @@ export default function App() {
         onOpenSearch={() => setSearchModal({ isOpen: true, query: '', maxPrice: 5, organicOnly: false })}
         onOpenHelp={() => setActiveModal('faq')}
         interimTranscript={interimTranscript}
+        currentLang={currentLang}
+        onLangChange={handleLangChange}
       />
 
       {/* Toast Notification Bar */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mic, MicOff, ShoppingBag, Search, HelpCircle, Volume2 } from 'lucide-react';
+import { Mic, MicOff, ShoppingBag, Search, HelpCircle, Volume2, Globe } from 'lucide-react';
 
 export default function FloatingVoiceController({
   isListening,
@@ -9,7 +9,9 @@ export default function FloatingVoiceController({
   onOpenCart,
   onOpenSearch,
   onOpenHelp,
-  interimTranscript
+  interimTranscript,
+  currentLang = 'en-US',
+  onLangChange
 }) {
   return (
     <div className="mobile-floating-bar">
@@ -58,15 +60,32 @@ export default function FloatingVoiceController({
           <span style={{ fontSize: '0.7rem', color: '#fff', fontWeight: 600 }}>Search</span>
         </button>
 
-        {/* Voice Commands Help */}
-        <button
-          onClick={onOpenHelp}
-          className="mobile-bar-btn"
-          title="Voice Command Help"
-        >
-          <HelpCircle size={20} color="#f3b316" />
-          <span style={{ fontSize: '0.7rem', color: '#fff', fontWeight: 600 }}>Help</span>
-        </button>
+        {/* Language Quick Switcher */}
+        <div className="mobile-bar-btn" style={{ position: 'relative' }}>
+          <Globe size={18} color="#f3b316" />
+          <select
+            value={currentLang}
+            onChange={(e) => onLangChange(e.target.value)}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              opacity: 0,
+              width: '100%',
+              height: '100%',
+              cursor: 'pointer'
+            }}
+            title="Switch Language"
+          >
+            <option value="en-US">English</option>
+            <option value="hi-IN">हिन्दी (Hindi)</option>
+            <option value="es-ES">Español</option>
+            <option value="fr-FR">Français</option>
+            <option value="de-DE">Deutsch</option>
+          </select>
+          <span style={{ fontSize: '0.7rem', color: '#fff', fontWeight: 600 }}>
+            {currentLang === 'hi-IN' ? 'हिन्दी' : currentLang.split('-')[0].toUpperCase()}
+          </span>
+        </div>
       </div>
     </div>
   );
