@@ -336,9 +336,10 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
     }
   }
 
-  // 4. Detect Explicit Add / Buy Intent ONLY when command explicitly starts with add/buy/put/need/get
+  // 4. Detect Explicit Add / Buy Intent (Supports both Prefix e.g. "Add 2 apples" and Postfix e.g. "केला ऐड करें" / "2 apples add")
   const addPhrases = [
-    /^(?:add|put|buy|need|want to buy|can you add|añadir|comprar|necesito|ajouter|acheter|hinzufügen|kaufen|जोड़ें|खरीदें)\s+(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|a dozen)\s+)?(?:bottles?|packs?|bags?|loaves|loaf|cartons?|bunches?|ears?|tub|tubs|bars?|kg|lbs?|quantity of|quantities of|number of|count of|pieces of|items of|nos of|pcs of|units of|of\s+)?(.*)/i
+    /^(?:add|put|buy|need|want to buy|can you add|añadir|comprar|necesito|ajouter|acheter|hinzufügen|kaufen|जोड़ें|खरीदें|ऐड करें|ऐड करो|ऐड)\s+(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|a dozen|एक|दो|तीन|चार|पांच)\s+)?(?:bottles?|packs?|bags?|loaves|loaf|cartons?|bunches?|ears?|tub|tubs|bars?|kg|lbs?|quantity of|quantities of|number of|count of|pieces of|items of|nos of|pcs of|units of|of\s+)?(.*)/i,
+    /^(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|एक|दो|तीन|चार|पांच)\s+)?(.*)\s+(?:ऐड करें|ऐड करो|ऐड कर दो|ऐड|जोड़ें|जोड़ो|डाल दो|लाओ|खरीदें|karo|karen|add|buy)$/i
   ];
 
   for (const pattern of addPhrases) {
@@ -392,6 +393,7 @@ export function sanitizeItemName(str) {
     .toLowerCase()
     .replace(/(?:that are|which are|that|is|are)?\s*(?:less than|under|below|above|over|more than|cheaper than|over|for|about|around)\s*\$?(\d+(?:\.\d+)?|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty)\b)(?:\s*(?:dollars?|doloors?|dolor?|bucks?|usd|bucs?))?/gi, '')
     .replace(/(?:from my list|from list|from the list|from cart|from it|from here|to my list|to list|on my list|in my list|out of my list|de mi lista|de la liste|aus der liste|it|please)+$/gi, '')
+    .replace(/(?:ऐड करें|ऐड करो|ऐड कर दो|ऐड|जोड़ें|जोड़ो|डाल दो|लाओ|खरीदें|karo|karen|add|buy)+$/gi, '')
     .replace(/^(to|my|the|a|an|some|a few|of|for|on|list|shopping list|quantity of|quantities of|number of|count of|pieces of|pcs of|items of|nos of|units of|amount of)\s+/gi, '')
     .replace(/^of\s+/gi, '')
     .replace(/[.,!?]/g, '')
