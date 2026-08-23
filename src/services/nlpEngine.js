@@ -135,6 +135,21 @@ export const MULTILINGUAL_PRODUCT_MAP = {
   'चॉकलेट': 'Dark Chocolate Bar'
 };
 
+export function resolveMultilingualProductName(rawQuery) {
+  if (!rawQuery) return rawQuery;
+  const q = rawQuery.toLowerCase().trim();
+  if (MULTILINGUAL_PRODUCT_MAP[q]) return MULTILINGUAL_PRODUCT_MAP[q];
+
+  const tokens = q.split(/\s+/);
+  for (const token of tokens) {
+    if (MULTILINGUAL_PRODUCT_MAP[token]) {
+      return MULTILINGUAL_PRODUCT_MAP[token];
+    }
+  }
+
+  return rawQuery;
+}
+
 /**
  * Phonetic & Speech Correction Helper
  */
@@ -389,15 +404,17 @@ function parseQuantity(qStr) {
  */
 export function sanitizeItemName(str) {
   if (!str) return '';
-  return str
+  const cleaned = str
     .toLowerCase()
     .replace(/(?:that are|which are|that|is|are)?\s*(?:less than|under|below|above|over|more than|cheaper than|over|for|about|around)\s*\$?(\d+(?:\.\d+)?|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty)\b)(?:\s*(?:dollars?|doloors?|dolor?|bucks?|usd|bucs?))?/gi, '')
     .replace(/(?:from my list|from list|from the list|from cart|from it|from here|to my list|to list|on my list|in my list|out of my list|de mi lista|de la liste|aus der liste|it|please)+$/gi, '')
-    .replace(/(?:ऐड करें|ऐड करो|ऐड कर दो|ऐड|जोड़ें|जोड़ो|डाल दो|लाओ|खरीदें|karo|karen|add|buy)+$/gi, '')
+    .replace(/(?:\s*(?:ऐड करें|ऐड करो|ऐड कर दो|ऐड|जोड़ें|जोड़ो|डाल दो|करो|करें|लाओ|खरीदें|karo|karen|add|buy))+$/gi, '')
     .replace(/^(to|my|the|a|an|some|a few|of|for|on|list|shopping list|quantity of|quantities of|number of|count of|pieces of|pcs of|items of|nos of|units of|amount of)\s+/gi, '')
     .replace(/^of\s+/gi, '')
     .replace(/[.,!?]/g, '')
     .trim();
+
+  return resolveMultilingualProductName(cleaned);
 }
 
 /**
@@ -417,7 +434,8 @@ export function capitalizeItemName(str) {
 export function findBestCatalogMatch(catalog, queryName, maxPrice = null) {
   if (!catalog || catalog.length === 0 || !queryName) return null;
   const rawQ = queryName.toLowerCase().trim();
-  const q = MULTILINGUAL_PRODUCT_MAP[rawQ] ? MULTILINGUAL_PRODUCT_MAP[rawQ].toLowerCase() : rawQ;
+  const resolvedName = resolveMultilingualProductName(rawQ);
+  const q = resolvedName.toLowerCase().trim();
 
   const pool = (maxPrice !== null && maxPrice > 0)
     ? catalog.filter(item => item.price <= maxPrice)
