@@ -111,10 +111,17 @@ export default function App() {
           }
         });
 
+        // Multilingual TTS speech generation
+        let speechMsg = `Added ${quantity} ${finalName} to your shopping list`;
+        if (currentLang === 'hi-IN') speechMsg = `आपकी शॉपिंग लिस्ट में ${quantity} ${finalName} जोड़ दिया गया है`;
+        else if (currentLang === 'es-ES') speechMsg = `Añadido ${quantity} ${finalName} a su lista de compras`;
+        else if (currentLang === 'fr-FR') speechMsg = `Ajouté ${quantity} ${finalName} à votre liste de courses`;
+        else if (currentLang === 'de-DE') speechMsg = `${quantity} ${finalName} zu Ihrer Einkaufsliste hinzugefügt`;
+
         triggerAudioAndToast(
           `Added ${quantity}x ${finalName} to ${finalCategory}`,
           'success',
-          `Added ${quantity} ${finalName} to your shopping list`
+          speechMsg
         );
 
         // Check for smart substitute recommendations
@@ -216,7 +223,24 @@ export default function App() {
       }
 
       default: {
-        triggerAudioAndToast(`Unrecognized command: "${rawText}". Try "Add apples", "Open cart" or "Find milk"`, 'error');
+        let errToast = `Unrecognized command: "${rawText}". Try "Add apples" or "Open cart"`;
+        let errSpeech = `Unrecognized command "${rawText}". Try saying add 2 apples or open cart.`;
+
+        if (currentLang === 'hi-IN') {
+          errToast = `अमान्य कमांड: "${rawText}". "2 केला" या "दूध जोड़ें" बोलकर देखें।`;
+          errSpeech = `कमांड "${rawText}" समझ नहीं आया। "2 केला" या "दूध जोड़ें" बोलकर देखें।`;
+        } else if (currentLang === 'es-ES') {
+          errToast = `Comando no reconocido: "${rawText}". Pruebe "Añadir 2 manzanas".`;
+          errSpeech = `Comando "${rawText}" no reconocido. Pruebe decir añadir 2 manzanas.`;
+        } else if (currentLang === 'fr-FR') {
+          errToast = `Commande non reconnue: "${rawText}". Essayez "Ajouter 2 pommes".`;
+          errSpeech = `Commande "${rawText}" non reconnue. Essayez d'ajouter 2 pommes.`;
+        } else if (currentLang === 'de-DE') {
+          errToast = `Befehl nicht erkannt: "${rawText}". Versuchen Sie "2 Äpfel hinzufügen".`;
+          errSpeech = `Befehl "${rawText}" nicht erkannt. Versuchen Sie 2 Äpfel hinzufügen.`;
+        }
+
+        triggerAudioAndToast(errToast, 'error', errSpeech);
         break;
       }
     }

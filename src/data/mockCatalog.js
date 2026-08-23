@@ -13,7 +13,7 @@ export const MOCK_CATALOG = [
     seasonal: 'All Year',
     inStock: true,
     popular: true,
-    tags: ['dairy', 'milk', 'eggs', 'drink', 'beverage', 'horizon', 'whole milk']
+    tags: ['dairy', 'milk', 'eggs', 'drink', 'beverage', 'horizon', 'whole milk', 'दूध', 'दोध', 'doodh', 'dudh', 'leche', 'lait', 'milch']
   },
   {
     id: 'prod-2',
@@ -26,7 +26,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Oat Milk', 'Whole Milk'],
     seasonal: 'All Year',
     inStock: true,
-    tags: ['dairy', 'milk', 'plant based', 'vegan', 'almond milk', 'silk']
+    tags: ['dairy', 'milk', 'plant based', 'vegan', 'almond milk', 'silk', 'बादाम दूध', 'badam doodh']
   },
   {
     id: 'prod-3',
@@ -39,7 +39,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Almond Milk', 'Soy Milk'],
     seasonal: 'All Year',
     inStock: true,
-    tags: ['dairy', 'milk', 'plant based', 'vegan', 'oat milk', 'oatly']
+    tags: ['dairy', 'milk', 'plant based', 'vegan', 'oat milk', 'oatly', 'ओट्स दूध', 'oat doodh']
   },
   {
     id: 'prod-4',
@@ -53,7 +53,7 @@ export const MOCK_CATALOG = [
     seasonal: 'Autumn',
     inStock: true,
     popular: true,
-    tags: ['produce', 'fruit', 'fruits', 'apple', 'apples', 'fresh', 'honeycrisp']
+    tags: ['produce', 'fruit', 'fruits', 'apple', 'apples', 'fresh', 'honeycrisp', 'सेब', 'सेव', 'seb', 'sev', 'manzana', 'manzanas', 'pomme', 'apfel']
   },
   {
     id: 'prod-5',
@@ -67,7 +67,7 @@ export const MOCK_CATALOG = [
     seasonal: 'All Year',
     inStock: true,
     popular: true,
-    tags: ['produce', 'fruit', 'fruits', 'banana', 'bananas', 'fresh', 'dole']
+    tags: ['produce', 'fruit', 'fruits', 'banana', 'bananas', 'fresh', 'dole', 'केला', 'केले', 'kela', 'kele', 'platano', 'plátano', 'banane']
   },
   {
     id: 'prod-6',
@@ -81,7 +81,7 @@ export const MOCK_CATALOG = [
     seasonal: 'All Year',
     inStock: true,
     popular: true,
-    tags: ['bakery', 'bread', 'breads', 'wheat bread', 'whole wheat', 'sandwich']
+    tags: ['bakery', 'bread', 'breads', 'wheat bread', 'whole wheat', 'sandwich', 'ब्रेड', 'रोti', 'roti', 'pan', 'pain', 'brot']
   },
   {
     id: 'prod-7',
@@ -94,7 +94,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Whole Wheat Bread', 'Sourdough Bread'],
     seasonal: 'All Year',
     inStock: true,
-    tags: ['bakery', 'bread', 'breads', 'white bread', 'sandwich', 'wonder']
+    tags: ['bakery', 'bread', 'breads', 'white bread', 'sandwich', 'wonder', 'सफेद ब्रेड']
   },
   {
     id: 'prod-8',
@@ -108,7 +108,7 @@ export const MOCK_CATALOG = [
     seasonal: 'Summer',
     inStock: true,
     popular: true,
-    tags: ['produce', 'fruit', 'fruits', 'berry', 'berries', 'strawberry', 'strawberries']
+    tags: ['produce', 'fruit', 'fruits', 'berry', 'berries', 'strawberry', 'strawberries', 'स्ट्रॉबेरी', 'fresa', 'fraise', 'erdbeere']
   },
   {
     id: 'prod-9',
@@ -121,7 +121,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Guacamole', 'Hummus'],
     seasonal: 'Spring',
     inStock: true,
-    tags: ['produce', 'fruit', 'fruits', 'avocado', 'avocados', 'hass', 'fresh']
+    tags: ['produce', 'fruit', 'fruits', 'avocado', 'avocados', 'hass', 'fresh', 'एवोकाडो', 'aguacate', 'avocat']
   },
   {
     id: 'prod-10',
@@ -134,7 +134,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Coconut Yogurt', 'Almond Milk Yogurt'],
     seasonal: 'All Year',
     inStock: true,
-    tags: ['dairy', 'yogurt', 'eggs', 'chobani', 'greek yogurt']
+    tags: ['dairy', 'yogurt', 'eggs', 'chobani', 'greek yogurt', 'दही', 'dahi', 'yogur', 'yaourt', 'joghurt']
   },
   {
     id: 'prod-11',
@@ -147,7 +147,7 @@ export const MOCK_CATALOG = [
     substitutes: ['LaCroix', 'Flavored Seltzer'],
     seasonal: 'Summer',
     inStock: true,
-    tags: ['beverages', 'beverage', 'drink', 'drinks', 'water', 'sparkling']
+    tags: ['beverages', 'beverage', 'drink', 'drinks', 'water', 'sparkling', 'पानी', 'paani', 'pani', 'agua', 'eau', 'wasser']
   },
   {
     id: 'prod-12',
@@ -160,7 +160,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Tom\'s Natural Toothpaste', 'Sensodyne'],
     seasonal: 'All Year',
     inStock: true,
-    tags: ['personal care', 'toothpaste', 'crest', 'whitening', 'teeth']
+    tags: ['personal care', 'toothpaste', 'crest', 'whitening', 'teeth', 'टूथपेस्ट', 'पेस्ट']
   },
   {
     id: 'prod-13',
@@ -173,7 +173,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Fair Trade Cocoa Chips', 'Almond Dark Chocolate'],
     seasonal: 'Winter',
     inStock: true,
-    tags: ['snacks', 'snack', 'chocolate', 'dark chocolate', 'candy', 'lindt']
+    tags: ['snacks', 'snack', 'chocolate', 'dark chocolate', 'candy', 'lindt', 'चॉकलेट', 'chocolat']
   },
   {
     id: 'prod-14',
@@ -186,7 +186,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Avocado Oil', 'Coconut Oil'],
     seasonal: 'All Year',
     inStock: true,
-    tags: ['pantry', 'oil', 'olive oil', 'cooking oil']
+    tags: ['pantry', 'oil', 'olive oil', 'cooking oil', 'तेल', 'tel', 'tail', 'aceite', 'huile', 'öl']
   },
   {
     id: 'prod-15',
@@ -199,7 +199,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Frozen Sweet Corn', 'Zucchini'],
     seasonal: 'Summer',
     inStock: true,
-    tags: ['produce', 'vegetable', 'vegetables', 'veggie', 'veggies', 'corn', 'sweet corn']
+    tags: ['produce', 'vegetable', 'vegetables', 'veggie', 'veggies', 'corn', 'sweet corn', 'मक्का', 'भुट्टा', 'bhutta', 'makka', 'maíz', 'maïs']
   },
   {
     id: 'prod-16',
@@ -212,7 +212,7 @@ export const MOCK_CATALOG = [
     substitutes: ['Butternut Squash', 'Sweet Potatoes'],
     seasonal: 'Autumn',
     inStock: true,
-    tags: ['produce', 'vegetable', 'vegetables', 'pumpkin', 'pumpkins']
+    tags: ['produce', 'vegetable', 'vegetables', 'pumpkin', 'pumpkins', 'कद्दू', 'kaddu', 'calabaza', 'citrouille', 'kürbis']
   }
 ];
 

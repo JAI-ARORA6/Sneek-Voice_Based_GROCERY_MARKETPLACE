@@ -97,20 +97,23 @@ export default function ShoppingList({
           {filteredItems.map(item => (
             <div
               key={item.id}
+              className="list-item-card"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '14px 18px',
+                flexWrap: 'wrap',
+                gap: '10px',
+                padding: '12px 14px',
                 background: item.completed ? 'rgba(15, 23, 42, 0.4)' : 'rgba(255, 255, 255, 0.04)',
                 border: item.completed ? '1px solid rgba(255,255,255,0.05)' : '1px solid var(--border-glass)',
-                borderRadius: '12px',
+                borderRadius: '14px',
                 transition: 'all 0.2s ease',
                 opacity: item.completed ? 0.65 : 1
               }}
             >
               {/* Checkbox & Item Details */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: '180px', flex: 1 }}>
                 <button
                   onClick={() => onToggleComplete(item.id)}
                   style={{
@@ -124,6 +127,7 @@ export default function ShoppingList({
                     justifyContent: 'center',
                     cursor: 'pointer',
                     color: '#fff',
+                    flexShrink: 0,
                     transition: 'all 0.2s ease'
                   }}
                 >
@@ -131,11 +135,11 @@ export default function ShoppingList({
                 </button>
 
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                     <span
                       style={{
-                        fontSize: '1rem',
-                        fontWeight: 600,
+                        fontSize: '0.98rem',
+                        fontWeight: 700,
                         color: item.completed ? '#94a3b8' : '#f8fafc',
                         textDecoration: item.completed ? 'line-through' : 'none'
                       }}
@@ -148,48 +152,48 @@ export default function ShoppingList({
                     </span>
 
                     {item.addedVia === 'voice' && (
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '2px', fontSize: '0.7rem', color: '#38bdf8', background: 'rgba(56,189,248,0.1)', padding: '2px 6px', borderRadius: '4px' }}>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '2px', fontSize: '0.68rem', color: '#38bdf8', background: 'rgba(56,189,248,0.1)', padding: '2px 6px', borderRadius: '4px' }}>
                         <Mic size={10} /> Voice
                       </span>
                     )}
                   </div>
 
-                  <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '2px' }}>
+                  <div style={{ fontSize: '0.78rem', color: '#94a3b8', marginTop: '2px' }}>
                     ${(item.price || 2.99).toFixed(2)} / {item.unit || 'item'}
                   </div>
                 </div>
               </div>
 
               {/* Quantity Controls & Price */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: 'auto' }}>
                 <div style={{ display: 'flex', alignItems: 'center', background: 'rgba(0,0,0,0.3)', borderRadius: '8px', border: '1px solid var(--border-glass)', padding: '2px' }}>
                   <button
                     onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                    style={{ background: 'none', border: 'none', color: '#cbd5e1', cursor: 'pointer', padding: '4px 8px' }}
+                    style={{ background: 'none', border: 'none', color: '#cbd5e1', cursor: 'pointer', padding: '3px 6px' }}
                   >
-                    <Minus size={14} />
+                    <Minus size={13} />
                   </button>
-                  <span style={{ fontSize: '0.9rem', fontWeight: 700, padding: '0 8px', minWidth: '24px', textAlign: 'center' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, padding: '0 4px', minWidth: '18px', textAlign: 'center' }}>
                     {item.quantity}
                   </span>
                   <button
                     onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                    style={{ background: 'none', border: 'none', color: '#cbd5e1', cursor: 'pointer', padding: '4px 8px' }}
+                    style={{ background: 'none', border: 'none', color: '#cbd5e1', cursor: 'pointer', padding: '3px 6px' }}
                   >
-                    <Plus size={14} />
+                    <Plus size={13} />
                   </button>
                 </div>
 
-                <div style={{ fontSize: '1rem', fontWeight: 700, color: '#38bdf8', minWidth: '60px', textAlign: 'right' }}>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#38bdf8', minWidth: '50px', textAlign: 'right' }}>
                   ${((item.price || 2.99) * item.quantity).toFixed(2)}
                 </div>
 
                 <button
                   onClick={() => onDeleteItem(item.id)}
-                  style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', padding: '6px' }}
+                  style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', padding: '4px' }}
                   title="Remove Item"
                 >
-                  <Trash2 size={16} className="hover-red" />
+                  <Trash2 size={15} className="hover-red" />
                 </button>
               </div>
             </div>

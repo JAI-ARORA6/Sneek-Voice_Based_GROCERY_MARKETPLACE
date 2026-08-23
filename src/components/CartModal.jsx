@@ -196,29 +196,31 @@ export default function CartModal({
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
-                          padding: '10px 14px',
+                          flexWrap: 'wrap',
+                          gap: '8px',
+                          padding: '10px 12px',
                           background: 'rgba(0, 36, 23, 0.7)',
                           borderRadius: '12px',
                           border: '1px solid rgba(255, 255, 255, 0.1)'
                         }}
                       >
-                        <div style={{ flex: 1 }}>
-                          <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff' }}>{item.name}</div>
-                          <div style={{ fontSize: '0.78rem', color: 'var(--text-cream)' }}>
+                        <div style={{ flex: 1, minWidth: '140px' }}>
+                          <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#fff' }}>{item.name}</div>
+                          <div style={{ fontSize: '0.76rem', color: 'var(--text-cream)' }}>
                             ${(item.price || 2.99).toFixed(2)} / {item.unit || 'item'}
                           </div>
                         </div>
 
                         {/* Quantity & Delete */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                          <div style={{ display: 'flex', alignItems: 'center', background: 'rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2px 6px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: 'auto' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', background: 'rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2px 4px' }}>
                             <button
                               onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
                               style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', padding: '2px 4px' }}
                             >
                               <Minus size={12} />
                             </button>
-                            <span style={{ fontSize: '0.85rem', fontWeight: 700, minWidth: '20px', textAlign: 'center', color: '#fff' }}>
+                            <span style={{ fontSize: '0.82rem', fontWeight: 700, minWidth: '16px', textAlign: 'center', color: '#fff' }}>
                               {item.quantity}
                             </span>
                             <button
@@ -229,7 +231,7 @@ export default function CartModal({
                             </button>
                           </div>
 
-                          <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--accent-yellow)', minWidth: '55px', textAlign: 'right' }}>
+                          <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--accent-yellow)', minWidth: '45px', textAlign: 'right' }}>
                             ${((item.price || 2.99) * item.quantity).toFixed(2)}
                           </div>
 

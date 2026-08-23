@@ -72,67 +72,132 @@ const CATEGORY_SYNONYMS = {
 };
 
 export const MULTILINGUAL_PRODUCT_MAP = {
+  // English & Variants
+  'milk': 'Whole Milk',
+  'whole milk': 'Whole Milk',
+  'almond milk': 'Almond Milk',
+  'oat milk': 'Oat Milk',
+  'apple': 'Organic Honeycrisp Apples',
+  'apples': 'Organic Honeycrisp Apples',
+  'honeycrisp': 'Organic Honeycrisp Apples',
+  'banana': 'Fresh Bananas',
+  'bananas': 'Fresh Bananas',
+  'bread': 'Whole Wheat Bread',
+  'wheat bread': 'Whole Wheat Bread',
+  'white bread': 'White Sandwich Bread',
+  'strawberry': 'Organic Strawberries',
+  'strawberries': 'Organic Strawberries',
+  'berries': 'Organic Strawberries',
+  'avocado': 'Avocados',
+  'avocados': 'Avocados',
+  'yogurt': 'Greek Yogurt (Plain)',
+  'greek yogurt': 'Greek Yogurt (Plain)',
+  'water': 'Sparkling Mineral Water',
+  'sparkling water': 'Sparkling Mineral Water',
+  'toothpaste': 'Whitening Toothpaste',
+  'paste': 'Whitening Toothpaste',
+  'chocolate': 'Dark Chocolate Bars (70%)',
+  'oil': 'Organic Extra Virgin Olive Oil',
+  'olive oil': 'Organic Extra Virgin Olive Oil',
+  'corn': 'Fresh Sweet Corn',
+  'sweet corn': 'Fresh Sweet Corn',
+  'pumpkin': 'Organic Pumpkins',
+  'pumpkins': 'Organic Pumpkins',
+
   // Spanish
   'leche': 'Whole Milk',
   'leches': 'Whole Milk',
+  'leche de almendra': 'Almond Milk',
+  'leche de avena': 'Oat Milk',
   'manzana': 'Organic Honeycrisp Apples',
   'manzanas': 'Organic Honeycrisp Apples',
-  'plátano': 'Organic Bananas',
-  'platano': 'Organic Bananas',
-  'plátanos': 'Organic Bananas',
-  'pan': 'Artisan Sourdough Bread',
-  'fresa': 'Fresh Strawberries',
-  'fresas': 'Fresh Strawberries',
-  'aguacate': 'Organic Hass Avocado',
-  'aguacates': 'Organic Hass Avocado',
-  'yogur': 'Greek Yogurt Honey',
+  'plátano': 'Fresh Bananas',
+  'platano': 'Fresh Bananas',
+  'plátanos': 'Fresh Bananas',
+  'pan': 'Whole Wheat Bread',
+  'pan blanco': 'White Sandwich Bread',
+  'fresa': 'Organic Strawberries',
+  'fresas': 'Organic Strawberries',
+  'aguacate': 'Avocados',
+  'aguacates': 'Avocados',
+  'yogur': 'Greek Yogurt (Plain)',
   'agua': 'Sparkling Mineral Water',
-  'aceite': 'Extra Virgin Olive Oil',
-  'maíz': 'Sweet Corn',
-  'maiz': 'Sweet Corn',
-  'pasta': 'Artisan Sourdough Bread',
-  'chocolat': 'Dark Chocolate Bar',
+  'aceite': 'Organic Extra Virgin Olive Oil',
+  'maíz': 'Fresh Sweet Corn',
+  'maiz': 'Fresh Sweet Corn',
+  'calabaza': 'Organic Pumpkins',
+  'chocolat': 'Dark Chocolate Bars (70%)',
 
   // French
   'lait': 'Whole Milk',
   'laits': 'Whole Milk',
   'pomme': 'Organic Honeycrisp Apples',
   'pommes': 'Organic Honeycrisp Apples',
-  'banane': 'Organic Bananas',
-  'bananes': 'Organic Bananas',
-  'pain': 'Artisan Sourdough Bread',
-  'fraise': 'Fresh Strawberries',
-  'fraises': 'Fresh Strawberries',
-  'avocat': 'Organic Hass Avocado',
-  'avocats': 'Organic Hass Avocado',
-  'yaourt': 'Greek Yogurt Honey',
+  'banane': 'Fresh Bananas',
+  'bananes': 'Fresh Bananas',
+  'pain': 'Whole Wheat Bread',
+  'fraise': 'Organic Strawberries',
+  'fraises': 'Organic Strawberries',
+  'avocat': 'Avocados',
+  'avocats': 'Avocados',
+  'yaourt': 'Greek Yogurt (Plain)',
   'eau': 'Sparkling Mineral Water',
-  'huile': 'Extra Virgin Olive Oil',
+  'huile': 'Organic Extra Virgin Olive Oil',
+  'maïs': 'Fresh Sweet Corn',
+  'citrouille': 'Organic Pumpkins',
 
   // German
   'milch': 'Whole Milk',
   'apfel': 'Organic Honeycrisp Apples',
   'äpfel': 'Organic Honeycrisp Apples',
-  'brot': 'Artisan Sourdough Bread',
-  'erdbeere': 'Fresh Strawberries',
-  'erdbeeren': 'Fresh Strawberries',
+  'brot': 'Whole Wheat Bread',
+  'erdbeere': 'Organic Strawberries',
+  'erdbeeren': 'Organic Strawberries',
   'wasser': 'Sparkling Mineral Water',
-  'joghurt': 'Greek Yogurt Honey',
-  'öl': 'Extra Virgin Olive Oil',
+  'joghurt': 'Greek Yogurt (Plain)',
+  'öl': 'Organic Extra Virgin Olive Oil',
+  'kürbis': 'Organic Pumpkins',
 
-  // Hindi
+  // Hindi (Devanagari)
   'दूध': 'Whole Milk',
+  'दोध': 'Whole Milk',
   'सेब': 'Organic Honeycrisp Apples',
-  'केला': 'Organic Bananas',
-  'केले': 'Organic Bananas',
-  'ब्रेड': 'Artisan Sourdough Bread',
-  'स्ट्रॉबेरी': 'Fresh Strawberries',
-  'एवोकाडो': 'Organic Hass Avocado',
+  'सेव': 'Organic Honeycrisp Apples',
+  'केला': 'Fresh Bananas',
+  'केले': 'Fresh Bananas',
+  'ब्रेड': 'Whole Wheat Bread',
+  'रोटी': 'Whole Wheat Bread',
+  'स्ट्रॉबेरी': 'Organic Strawberries',
+  'एवोकाडो': 'Avocados',
   'पानी': 'Sparkling Mineral Water',
-  'दही': 'Greek Yogurt Honey',
-  'तेल': 'Extra Virgin Olive Oil',
-  'मक्का': 'Sweet Corn',
-  'चॉकलेट': 'Dark Chocolate Bar'
+  'दही': 'Greek Yogurt (Plain)',
+  'तेल': 'Organic Extra Virgin Olive Oil',
+  'मक्का': 'Fresh Sweet Corn',
+  'भुट्टा': 'Fresh Sweet Corn',
+  'कद्दू': 'Organic Pumpkins',
+  'चॉकलेट': 'Dark Chocolate Bars (70%)',
+  'टूथपेस्ट': 'Whitening Toothpaste',
+
+  // Hinglish / Romanized Hindi
+  'doodh': 'Whole Milk',
+  'dudh': 'Whole Milk',
+  'dodh': 'Whole Milk',
+  'seb': 'Organic Honeycrisp Apples',
+  'saib': 'Organic Honeycrisp Apples',
+  'sev': 'Organic Honeycrisp Apples',
+  'kela': 'Fresh Bananas',
+  'kele': 'Fresh Bananas',
+  'kailah': 'Fresh Bananas',
+  'kayla': 'Fresh Bananas',
+  'paani': 'Sparkling Mineral Water',
+  'pani': 'Sparkling Mineral Water',
+  'dahi': 'Greek Yogurt (Plain)',
+  'dahii': 'Greek Yogurt (Plain)',
+  'tel': 'Organic Extra Virgin Olive Oil',
+  'tail': 'Organic Extra Virgin Olive Oil',
+  'bhutta': 'Fresh Sweet Corn',
+  'makka': 'Fresh Sweet Corn',
+  'kaddu': 'Organic Pumpkins'
 };
 
 export function resolveMultilingualProductName(rawQuery) {
@@ -284,7 +349,13 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
   }
 
   // 1.5 Detect Cart, Checkout, Order & Help Intents
-  const openCartKeywords = ['open cart', 'view cart', 'show cart', 'my cart', 'go to cart', 'open my cart', 'checkout', 'show shopping cart', 'ver carrito', 'abrir carrito', 'carrito'];
+  const openCartKeywords = [
+    'open cart', 'view cart', 'show cart', 'my cart', 'go to cart', 'open my cart', 'checkout', 'show shopping cart',
+    'ver carrito', 'abrir carrito', 'carrito',
+    'ouvrir le panier', 'voir le panier', 'panier',
+    'warenkorb öffnen', 'warenkorb',
+    'कार्ट खोलो', 'कार्ट खोलें', 'कार्ट दिखाओ', 'कार्ट देखें', 'कार्ट', 'मेरा कार्ट'
+  ];
   const isCartIntent = openCartKeywords.some(kw => text.includes(kw));
 
   if (isCartIntent) {
@@ -295,7 +366,13 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
     };
   }
 
-  const placeOrderKeywords = ['place order', 'complete order', 'confirm order', 'buy now', 'confirm purchase', 'pay now', 'place my order', 'order now', 'hacer pedido', 'comprar todo'];
+  const placeOrderKeywords = [
+    'place order', 'complete order', 'confirm order', 'buy now', 'confirm purchase', 'pay now', 'place my order', 'order now',
+    'hacer pedido', 'comprar todo',
+    'passer la commande', 'commander',
+    'bestellung aufgeben', 'jetzt kaufen',
+    'ऑर्डर प्लेस करो', 'ऑर्डर करो', 'ऑर्डर दें', 'ऑर्डर'
+  ];
   const isOrderIntent = placeOrderKeywords.some(kw => text.includes(kw));
 
   if (isOrderIntent) {
@@ -306,7 +383,7 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
     };
   }
 
-  const helpKeywords = ['voice help', 'help me', 'what can i say', 'commands', 'voice commands', 'ayuda', 'options'];
+  const helpKeywords = ['voice help', 'help me', 'what can i say', 'commands', 'voice commands', 'ayuda', 'options', 'मदद', 'सहायता', 'कमांड'];
   const isHelpIntent = helpKeywords.some(kw => text === kw || text.startsWith(kw));
 
   if (isHelpIntent) {
@@ -318,7 +395,14 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
   }
 
   // 2. Detect Clear List Intent
-  if (text.includes('clear my list') || text.includes('delete all items') || text.includes('empty cart') || text.includes('borrar lista')) {
+  const clearKeywords = [
+    'clear my list', 'delete all items', 'empty cart', 'clear list',
+    'borrar lista', 'vaciar carrito',
+    'vider le panier',
+    'liste löschen', 'warenkorb leeren',
+    'लिस्ट खाली करो', 'सब हटाओ', 'कार्ट खाली करो', 'लिस्ट साफ करो'
+  ];
+  if (clearKeywords.some(kw => text.includes(kw))) {
     return {
       intent: 'CLEAR_LIST',
       rawText: rawTranscript,
@@ -328,7 +412,8 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
 
   // 3. Detect Remove / Delete Intent
   const removePatterns = [
-    /(?:remove|delete|take off|drop|subtract|reduce|eliminar|quitar|supprimer|löschen|हटाएं)\s+(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an)\s+)?(?:bottles?|packs?|bags?|loaves|loaf|cartons?|bunches?|tub|tubs|quantity of|quantities of|number of|count of|pieces of|items of|nos of|pcs of|of\s+)?(.*)/i
+    /(?:remove|delete|take off|drop|subtract|reduce|eliminar|quitar|supprimer|löschen|हटाएं|हटाओ|निकालो|कम करो)\s+(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|एक|दो|तीन|चार|पांच)\s+)?(?:bottles?|packs?|bags?|loaves|loaf|cartons?|bunches?|tub|tubs|quantity of|quantities of|number of|count of|pieces of|items of|nos of|pcs of|of\s+)?(.*)/i,
+    /(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|एक|दो|तीन|चार|पांच)\s+)?(.*)\s+(?:हटाएं|हटाओ|निकालो|कम करो|remove|delete)$/i
   ];
 
   for (const pattern of removePatterns) {
@@ -351,7 +436,7 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
     }
   }
 
-  // 4. Detect Explicit Add / Buy Intent (Supports both Prefix e.g. "Add 2 apples" and Postfix e.g. "केला ऐड करें" / "2 apples add")
+  // 4. Detect Explicit Add / Buy Intent (Supports both Prefix e.g. "Add 2 apples", Postfix e.g. "केला ऐड करें", and Direct Item e.g. "2 केला" / "दूध")
   const addPhrases = [
     /^(?:add|put|buy|need|want to buy|can you add|añadir|comprar|necesito|ajouter|acheter|hinzufügen|kaufen|जोड़ें|खरीदें|ऐड करें|ऐड करो|ऐड)\s+(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|a dozen|एक|दो|तीन|चार|पांच)\s+)?(?:bottles?|packs?|bags?|loaves|loaf|cartons?|bunches?|ears?|tub|tubs|bars?|kg|lbs?|quantity of|quantities of|number of|count of|pieces of|items of|nos of|pcs of|units of|of\s+)?(.*)/i,
     /^(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|एक|दो|तीन|चार|पांच)\s+)?(.*)\s+(?:ऐड करें|ऐड करो|ऐड कर दो|ऐड|जोड़ें|जोड़ो|डाल दो|लाओ|खरीदें|karo|karen|add|buy)$/i
@@ -376,6 +461,30 @@ export function parseVoiceCommand(rawTranscript, lang = 'en-US') {
           isOrganic: text.includes('organic') || text.includes('orgánico') || text.includes('bio')
         };
       }
+    }
+  }
+
+  // 5. Fallback Direct Item Declaration (e.g. "2 केला", "दूध", "2 manzanas", "1 milk")
+  const directMatchRegex = /^(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten|a|an|एक|दो|तीन|चार|पांच)\s+)?(.*)$/i;
+  const directMatch = text.match(directMatchRegex);
+
+  if (directMatch) {
+    const quantityStr = directMatch[1];
+    const rawItem = directMatch[2];
+    const cleanedItem = sanitizeItemName(rawItem);
+    const resolvedName = resolveMultilingualProductName(cleanedItem);
+
+    if (resolvedName && resolvedName !== cleanedItem) {
+      return {
+        intent: 'ADD_ITEM',
+        rawText: rawTranscript,
+        correctedText: text,
+        itemName: resolvedName,
+        quantity: quantityStr ? parseQuantity(quantityStr) : 1,
+        maxPrice: priceBounds.maxPrice !== 20 ? priceBounds.maxPrice : null,
+        category: detectCategory(resolvedName),
+        isOrganic: text.includes('organic') || text.includes('orgánico') || text.includes('bio')
+      };
     }
   }
 
@@ -483,13 +592,13 @@ export function findBestCatalogMatch(catalog, queryName, maxPrice = null) {
       }
     }
 
-    if (score > highestScore && score > 0) {
+    if (score > highestScore && score >= 35) {
       highestScore = score;
       bestMatch = item;
     }
   }
 
-  return bestMatch;
+  return highestScore >= 35 ? bestMatch : null;
 }
 
 /**
